@@ -1,0 +1,8 @@
+# gitignore files
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+*.zip
+# Para ignorar archivos que empiezan con '/' dentro de una carpeta carpeta/**.zip 
+users_pass
