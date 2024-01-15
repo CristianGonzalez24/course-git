@@ -13,7 +13,8 @@
 //? git reset
 // Devuelve los cambios realizados de area de staging => area de trabajo.
 
-//? git commit -m ""
+//? git commit -m "" 
+//? git commit -m "Titulo" -m "Descripción" 
 // Mueve todos los cambios realizados de área de staging => área de repositorio.
 // Se recomienda realizar commits pequeños y frecuentes, cada vez que se haya realizado un cambio significativo
 //Los mensajes de los commits:
@@ -137,6 +138,14 @@
 // Permite visualizar de forma detallada algún commit en especifico.
 // Si no se especifica un commit, por defecto, muestra la información del último commit realizado.
 
-//todo GIT IGNORE
+//? GIT IGNORE
 // Nos permite ignorar archivos que no creemos necesarios en el historial de versiones, como archivos .env con datos sensibles, archivos compilados, librerías, etc.
 // Este archivo nos permite especificar el nombre de los archivos a ignorar, como asi también especificar patrones (Ej. *.zip => ignora todos los archivos .zip)
+
+//? MERGE CONFLICTS
+// Se producen cuando git no puede fusionar los cambios de diferentes ramas de forma automática. 
+// Se puede dar cuando dos personas modificaron la misma linea de código, o cuando actualizamos la rama local con los cambios que hay en la rama remota.
+// Cuando haya conflictos git nos mostrara con un mensaje:
+//* <<<<<<<<<<< HEAD (Cambios en la rama principal o rama padre)
+//* >>>>>>>>>>> (Cambios en la rama secundaria o rama hija)
+const test1 = 'Soy el falso conflicto'
