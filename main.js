@@ -148,3 +148,9 @@
 //* <<<<<<<<<<< HEAD (Cambios en la rama principal o rama padre)
 //* >>>>>>>>>>> (Cambios en la rama secundaria o rama hija)
 const test1 = 'Soy el verdadero conflicto'
+
+//? git checkout
+// Permite resolver los conflictos al fusionar cambios de dos ramas, hay dos alternativas...
+//* git checkout --ours [nombre del archivo] => Cuando queremos conservar los cambios de la rama padre.
+//* git checkout --theirs [nombre del archivo] => Cuando queremos conservar los cambios de la rama secundaria/hija.
+// Después se realiza un git add . y un git commit (Sin mensaje)
