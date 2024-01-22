@@ -13,7 +13,8 @@
 //? git reset
 // Devuelve los cambios realizados de area de staging => area de trabajo.
 
-//? git commit -m ""
+//? git commit -m "" 
+//? git commit -m "Titulo" -m "Descripción" 
 // Mueve todos los cambios realizados de área de staging => área de repositorio.
 // Se recomienda realizar commits pequeños y frecuentes, cada vez que se haya realizado un cambio significativo
 //Los mensajes de los commits:
