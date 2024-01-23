@@ -150,8 +150,69 @@
 //* >>>>>>>>>>> (Cambios en la rama secundaria o rama hija)
 const test1 = 'Soy el verdadero conflicto'
 
-//? git checkout
+//? git checkout (MERGE)
 // Permite resolver los conflictos al fusionar cambios de dos ramas, hay dos alternativas...
 //* git checkout --ours [nombre del archivo] => Cuando queremos conservar los cambios de la rama padre.
 //* git checkout --theirs [nombre del archivo] => Cuando queremos conservar los cambios de la rama secundaria/hija.
 // Después se realiza un git add . y un git commit (Sin mensaje)
+
+//? EVITAR MERGE CONFLICTS:
+//* Realizar commits pequeños y frecuentes
+//* Escribir mensajes descriptivos en los commits
+//* Actualizar constantemente el repositorio local
+//* Trabajar en ramas propias
+
+//? git checkout
+// Es uno de los comandos mas versátiles de git, ya que posee muchas funciones, como crear ramas, navegar entre archivos, ramas o commits, deshacer cambios, etc.
+//* git checkout [nombre del archivo] => Deshace los cambios realizados en un archivo especifico.
+//* git checkout . => Deshace los cambios realizados en todo el repositorio.
+
+//? git revert [Hash del commit]
+// Nos permite volver a los cambios realizados en un commit especifico, borrar los cambios que se hicieron a partir de ese mismo commit y generar un nuevo commit con los cambios restaurados.
+
+//? git reset
+// Nos permite volver a un estado anterior, deshaciendo uno o más commits.
+// Tiene 3 alternativas... Determinan el destino de los cambios realizados posterior al commit especificado.
+//* git reset --soft [Hash commit] => Deshace el commit y mantiene los cambios en el área de staging.
+//* git reset (--MIXED) [Hash commit] => Por defecto. Deshace el commit y mantiene los cambios en el área de trabajo.
+//* git reset --hard [Hash commit] => Por defecto. Deshace el commit y deshace los cambios.
+
+// ======================================================================================================================================================================
+//? git rebase [nombre de la rama]
+// Permite manipular el origen del cual fue creada alguna rama secundaria, por ejemplo cuando necesitamos actualizar la rama secundaria con los últimos cambios de la rama padre.
+// Debemos estar posicionados en la rama que vamos a manipular el punto de origen y ejecutar el código (Ej: git rebase main)
+//* git rebase -i [nombre de la rama] => Permite manipular cada commit de la rama especificada, se pueden borrar, editar, fusionar, etc.
+
+//? git commit --amend
+// Permite modificar la información del último commit realizado
+
+//? git cherry-pick [Hash del commit]
+// Nos permite traer cambios que se encuentran en una rama diferente a la que estamos trabajando, es como un copiar y pegar.
+// Escenario => Otra persona realiza cambios en una rama secundaria, dichos cambios los necesitamos y no se encuentran en la rama principal, hacemos uso del comando.
+// Debemos estar posicionados en la rama en la que estamos trabajando, y escribir el código con el hash del commit de la rama que contiene los cambios que necesitamos.
+
+// Rebase, amend y cherry-pick permiten manipular la la secuencia de cambios en el historial de git incluyendo su contenido, sus referencias y su meta-data. También deshacen cambios.
+//! Estos comandos solo deben ser utilizados en proyectos personales, debido a que puede generar muchos conflictos al hacer merge en proyectos con otras personas.
+// ======================================================================================================================================================================
+
+//? FEATURED BASED
+//* Es un workflow ideal para trabajar con git. Es un guía a seguir para trabajar en proyectos personales o en equipo y evitar incidencias.
+//* Cada integrante crea una rama secundaria por cada cambio a realizar en el proyecto original
+//* No se realiza el merge de una vez, se realiza un pull request, en el cual los demás integrantes del equipo pueden verificar el código en Github, antes de fusionar las ramas.
+
+//? GIT FLOW
+//* Es la metodología mas utilizada para organizar los proyectos grandes y complejos, algunas veces con ligeros cambios de acuerdo a necesidades.
+// Utiliza dos ramas principales...
+//* MAIN => Es la rama principal del proyecto y contiene unicamente la versión ESTABLE del código
+//* DEVELOP => Es la rama de integración y contiene la última versión del código que esta en desarrollo.
+// También utiliza ramas secundarias para manejar el flujo de trabajo...
+//* FEATURED BRANCHES => Son ramas secundarias en las que se desarrollan nuevas características del proyecto. Se crean a partir de la rama develop y después de fusionan.
+//* RELEASE BRANCHES => Son utilizadas para preparar una versión del código para su lanzamiento. Se crean a partir de la rama develop y se fusionan con la rama MAIN.
+//* HOTFIX BRANCHES => Se utilizan para corregir errores CRÍTICOS en la rama principal. Se crean a partir de la rama MAIN y se fusionan con la rama MAIN Y DEVELOP una vez arreglado los errores.
+
+//? TRUNK BASED
+//* Pretende destronar a git flow, se basa en la desventaja del mismo con CI/CD, ya que al tener tantas ramas hay mucha demora en la llegada del código a la rama principal
+//* Hay una única rama principal para el desarrollo del proyecto => MAIN
+//* Las ramas utilizadas para el desarrollo de features son de muy corta vida => SHORT-LIVED-BRANCH. Se aplican tests automatizados y luego son fusionadas a la rama principal.
+//* Sus ventajas son: Simplicidad, entrega rápida, menor complejidad y mayor visibilidad.
+//* Es ideal para proyectos pequeños o grupos pequeños. Especialmente para grupos de desarrolladores con mucha experiencia, ya que al haber más libertad para agregar cambios, hay más posibilidades de provocar errores.
