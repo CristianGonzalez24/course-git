@@ -17,11 +17,33 @@
 //? git commit -m "Titulo" -m "Descripción" 
 // Mueve todos los cambios realizados de área de staging => área de repositorio.
 // Se recomienda realizar commits pequeños y frecuentes, cada vez que se haya realizado un cambio significativo
+
 //Los mensajes de los commits:
 //* El titulo debe tener como máximo 50 caracteres
 //* Utilizar verbos imperativos (add, delete, fix, update)
 //* Dejar un salto de linea entre el titulo y la descripción
 //* La descripción debe enfocarse en el que y el porque de los cambios
+//* Sin puntos al final del mensaje 
+// Ejemplos: Add readme.md, Delete main.js, Fix login.js, Update carousel.js
+
+//! Convencional commits structure:
+// <TYPE> [OPTIONAL SCOPE] : <DESCRIPTION>
+// Ejemplo: fix(login): Fix login form, feat(navbar) : Add navbar
+
+//* Tipos de commits:
+//* Feat => Nuevas funcionalidades
+//* Fix => Corregir bugs
+//* Refactor => Reescribir código
+//* Chore => Cambios de configuración, documentación, etc.
+//* Docs => Documentación
+//* Perf => Mejorar la performance del código
+//* Style => Cambios de estilos, elementos del UI
+//* Test => Corrección de tests
+//* Build => Cambios de configuración de build, por ej vite
+//* CI => Corrección de CI, github o gitlab, etc.
+//* ENV => Cambios variables de entorno, cambios globales.
+
+// El scope es para indicar en que parte va a afectar ek commit que estamos realizando
 
 //? git log
 // Nos permite ver el historial de commits realizados.
@@ -64,6 +86,14 @@
 //* Debe permitir identificar issues/tareas asociadas
 //* EJEMPLOS => issue45-add-navbar, fix-contact-cta, test-color-brand, 59-update-user-db-model
 //! SE DEBE CREAR UNA NUEVA RAMA CADA VEZ QUE SE REALICE UN CAMBIO EN EL CÓDIGO COMO => ADD, FIX, DELETE, MODIFY
+
+// Convención de prefijos para las ramas:
+//* FEATURE => Nueva funcionalidad
+//* RELEASE => Nueva versión
+//* BUGFIX => Corregir errores
+//* HOTFIX => Corregir bugs críticos
+//* DOCS => Documentación
+// Ejemplos: feature/add-navbar, release/update-user-db-model, bugfix/fix-contact-cta, hotfix/59-update-user-db-model, docs/59-update-user-db-model
 
 //? git merge
 // Permite fusionar los cambios realizados en una rama secundaria con la rama principal.
