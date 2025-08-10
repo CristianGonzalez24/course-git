@@ -947,6 +947,7 @@ Seguir buenas prácticas no solo mejora la calidad del código, sino que tambié
 - **Crear .gitignore desde el inicio**
     - Evita subir archivos innecesarios o sensibles.
     - Ejemplo:
+    ```bash
     node_modules/
     .env
     *.log
