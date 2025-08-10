@@ -1,5 +1,13 @@
 # 📘 Guía Definitiva de Git & GitHub
 
+<div align=center>
+    <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="150px"/>
+    <img src="https://user-images.githubusercontent.com/74038190/212281775-b468df30-4edc-4bf8-a4ee-f52e1aaddc86.gif" width="250px"/>
+</div>
+
+<br/>
+<br/>
+
 Bienvenido a tu referencia rápida y completa sobre **Git** y **GitHub**.  
 Aquí encontrarás comandos esenciales, flujos de trabajo recomendados y buenas prácticas para que puedas trabajar de forma eficiente en tus proyectos de desarrollo, tanto de manera individual como en equipo.
 
